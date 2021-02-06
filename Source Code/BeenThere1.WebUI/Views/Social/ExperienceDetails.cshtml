@@ -1,0 +1,222 @@
+﻿@model ExperienceCreateUpdateModel
+
+@section Css{
+    <link href="~/css/ExperienceDetails.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/categorychoose.css" />
+    <link rel="stylesheet" href="~/css/autoCompleteForm.css" />
+    <style>
+        .mul-select {
+            width: 100%;
+        }
+    </style>
+
+}
+@section Scripts{
+    <script src="~/ckeditor/ckeditor.js"></script>
+    @*<script>CKEDITOR.replace('body_input');</script>*@
+    <script>$(document).ready(function () {
+            $(".mul-select").select2({
+                placeholder: " Select categories",
+                tags: true,
+                tokenSeparators: ['/', ',', ';', " "]
+            });
+        })</script>
+
+    <script>function findCommentId(id, title, body) {
+            document.getElementById("commentEditId").value = id;
+            document.getElementById("commentEditTitle").value = title;
+            document.getElementById("commentEditBody").value = body;
+        }</script>
+    <script src="https://cdn.tiny.cloud/1/etjml9n4xo2n4ixmu35javdmusxfwbfwqnkssn9tlw7yoo5s/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>tinymce.init({
+            selector: '#body_input'
+
+        });</script>
+    @if (Model.ExperienceEditModelStateInvalid)
+    {
+        <script type="text/javascript">$(window).on('load', function () {
+                $('#editExperienceModal').modal('show');
+            });</script>
+    }
+
+
+}
+
+<section class="ftco-section" style="padding-top:0px">
+    <div class="blog-header">
+        <div class="blog-header-overlay"></div>
+        <div style="background-image: url('/img/@Model.ImageUrl');" class="header-image-block"></div>
+    </div>
+    <div class="section blog-post-section">
+        <div class="container blog-post-container w-container">
+            <div class="white-content-block">
+                <div style="background-image: url('/img/@Model.ImageUrl');" class="blog-post-image-block">
+                    <div class="blog-post-header">
+                        <div class="blog-header-title-wrapper" style="">
+                            <div class="blog-post-date">@Model.CreationDate.ToShortDateString() @Model.CreationDate.ToShortTimeString()</div>
+                            <h1 class="blog-post-title">@Model.Name</h1>
+                            <h4 class="" style="color:white">@Model.Author</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-content-block-content-wrapper align-left">
+                    @if (User.Identity.Name == Model.Author || User.IsInRole("Admin"))
+                    {
+                        <a type="button" href="/social/experiencedelete/@Model.ExperienceId" class="btn btn-danger btn-sm" style="position: absolute; top:420px; right:20px;">
+                            Delete Experience
+                        </a>
+
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editExperienceModal" style="position: absolute; top:420px; right:170px;">
+                            Edit Experience
+                        </button>
+                    }
+
+
+                    <div class="rich-text-block w-richtext ">
+                        @Html.Raw(Model.Body)
+                    </div>
+                    <div class="blog-author-block w-clearfix mb-5">
+                        <div style="background-image: url('/img/@Model.AuthorProfilePicUrl');" class="blog-author-image"></div>
+                        <a href="~/img/@Model.ImageUrl" class="image-popup" style="position: absolute; top: 50px; right:50px;">
+                            <span class="icon-expand"></span>
+                        </a>
+                        <div class="blog-author-title">Written by</div>
+                        <div class="blog-author-title name"><a href="/social/profile2/@Model.Author">@Model.Author</a></div>
+                    </div>
+                    <hr class="mb-5" />
+                    <div>
+                        <h4 class="mb-3">@Model.CommentsOfThisListing.Count Comment(s)</h4>
+                        @foreach (var comment in Model.CommentsOfThisListing)
+                        {
+                            @await Html.PartialAsync("_CommentCard", comment);
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="mt-3 mb-3" id="comment">
+                                <h3 class="mb-3">Leave a comment</h3>
+                                <div style="border:1px solid #cecece; border-radius: 5px; border-width: medium; border-color:#222831; background-color:white">
+                                    <form class="p-3" asp-controller="social" asp-action="commentcreate" method="post">
+                                        <input type="hidden" name="experienceId" value="@Model.ExperienceId" />
+                                        <input type="hidden" name="author" value="@User.Identity.Name" />
+
+                                        <div class="form-group">
+                                            <label for="commentTitle">Comment Title</label>
+                                            <input type="text" name="commentTitle" class="form-control" id="commentTitle" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="commentBody">Message</label>
+                                            <textarea name="commentBody" id="commentBody" cols="30" rows="3" class="form-control" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn py-3 px-4 btn-primary btn-sm">Post Comment</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <h2 class="mt-5"><a asp-controller="account" asp-action="login" asp-route-returnUrl="/social/experiencedetails/@Model.ExperienceId/#comment">Log in</a> to comment on this experience.</h2>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="editExperienceModal" tabindex="-1" role="dialog" aria-labelledby="editExperienceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editExperienceModalLabel">Edit Experience</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editform" asp-controller="Social" asp-action="experienceedit" method="post" enctype="multipart/form-data">
+
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <input type="hidden" class="form-control" asp-for="CommentsOfThisListing" readonly>
+                    <input type="hidden" class="form-control" asp-for="ExperienceId" readonly>
+                    <input type="hidden" class="form-control" asp-for="AllCategories" readonly>
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input class="form-control" asp-for="Name" placeholder="How would you best describe your experience in a few words?" required>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Body"></label>
+                        <textarea id="body_input" class="form-control" asp-for="Body" rows="8" placeholder="" required></textarea>
+                        <span asp-validation-for="Body" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ImageUrl">Cover Photo</label>
+                        <input type="hidden" asp-for="ImageUrl">
+                        <img src="~/img/@Model.ImageUrl" width="80" />
+                        <input type="file" name="file" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>Categories For This Experience</h5>
+                        <select name="selectedCategoryIds" class="mul-select" multiple="true" style="width:90%">
+                            @foreach (var category in Model.AllCategories)
+                            {
+                                <!option value="@category.CategoryId" @(Model.CategoriesOfThisListing.Select(s => s.CategoryId).Any(i => i == category.CategoryId) ? "selected" : "")>
+                                    @category.Name
+                                </!option>
+                            }
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" form="editform">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editCommentModal" tabindex="-1" role="dialog" aria-labelledby="editCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCommentModalLabel">Edit Comment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="commentEditForm" asp-controller="social" asp-action="commentedit" method="post">
+                    <input type="hidden" id="commentEditId" name="commentEditId" />
+                    <div class="form-group">
+                        <label for="commentEditTitle">Name</label>
+                        <input id="commentEditTitle" name="commentEditTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="commentEditBody">Body</label>
+                        <textarea rows="3" id="commentEditBody" name="commentEditBody" class="form-control" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button form="commentEditForm" type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

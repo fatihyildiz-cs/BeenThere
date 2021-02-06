@@ -1,0 +1,236 @@
+
+body {
+    height: 100%;
+    background-color: #d6e0f0;
+    color: #333;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+blockquote {
+  margin-bottom: 25px;
+  padding: 0px 20px;
+  border-left: 5px solid #8d4fdb;
+  font-size: 19px;
+  line-height: 27px;
+}
+
+
+
+.container {
+  position: relative;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+
+.container.blog-post-container {
+  margin-top: -400px;
+}
+
+.container.full {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.section {
+    padding-bottom: 90px;
+    background-color: #d6e0f0;
+}
+
+
+
+.white-content-block {
+  position: relative;
+  z-index: 3;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 0 55px 0 rgba(0, 0, 0, 0.1);
+}
+
+.white-block-title {
+  margin-top: 0px;
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.white-block-subtitle {
+  margin-top: 13px;
+  margin-bottom: 30px;
+  color: #a9afb3;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+
+
+.white-content-block-content-wrapper {
+  padding: 80px 160px 70px;
+  text-align: center;
+}
+
+.white-content-block-content-wrapper.align-left {
+  text-align: left;
+}
+
+.white-content-block-content-wrapper.tint {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-color: #f1f1f1;
+}
+
+.blog-post-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  color: white;
+}
+
+.blog-post-image-block {
+  background-image: url("https://assets.website-files.com/57fcaf98bbe5eb9d672d47c2/57fcaf98bbe5eb9d672d4801_Black-White-Image.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+
+.blog-author-block {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px dashed #ddd;
+}
+
+.blog-author-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 25px;
+  float: left;
+  border-radius: 4px;
+  background-image: url("https://d3e54v103j8qbb.cloudfront.net/img/example-bg.png");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.blog-author-title {
+  margin-top: 2px;
+}
+
+.blog-author-title.name {
+  margin-top: 0px;
+  margin-bottom: 2px;
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  line-height: 31px;
+  font-weight: 700;
+}
+
+
+.blog-author-wrapper {
+  margin-bottom: 20px;
+}
+
+.blog-author-wrapper.small {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin-bottom: 0px;
+  padding: 35px 5px 20px 24px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+}
+
+.blog-author-wrapper.medium {
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
+
+.blog-author-image-block {
+  width: 40px;
+  height: 40px;
+  margin-right: 14px;
+  float: left;
+  border-radius: 4px;
+  background-image: url("https://d3e54v103j8qbb.cloudfront.net/img/example-bg.png");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.blog-author-image-block.small {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+}
+
+.blog-author-name {
+  margin-top: 2px;
+  font-family: Montserrat, sans-serif;
+  color: white;
+  line-height: 19px;
+  font-weight: 700;
+}
+
+.blog-author-name.small {
+  font-size: 14px;
+}
+
+.blog-header {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  width: 100%;
+  height: 630px;
+  background-color: #000;
+}
+
+.header-image-block {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://d3e54v103j8qbb.cloudfront.net/img/example-bg.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.blog-post-header {
+  position: relative;
+  height: 400px;
+}
+
+.blog-header-title-wrapper {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 40px 160px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.4)));
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
+  color: white;
+}
+
+
+

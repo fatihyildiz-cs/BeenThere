@@ -1,0 +1,28 @@
+﻿@model Experience
+
+<div class="col-md-6 col-lg-4 ftco-animate p-3" style="border:solid">
+    <div class="project">
+        <div class="img justify-content-center" style="width:auto; height:200px">
+            <img src="~/img/@Model.ImageUrl" class="img-fluid">
+        </div>
+        <div class="text">
+            <h4 class="price">@Model.DateOfCreation.Day.ToString().@Model.DateOfCreation.Month.ToString().@Model.DateOfCreation.Year.ToString()  </h4>
+            <span>@Model.Author</span>
+            <h3><a href="/social/experiencedetails/@Model.ExperienceId">@Model.Name</a></h3>
+
+        </div>
+        <div class="align-bottom">
+            @if (@Model.Location != null)
+            {
+                <h5 class="mb-3">Location: <a class="btn btn-secondary btn-sm" href="/social/locationsummary/@Model.Location.LocationId">@Model.Location.Name</a></h5>
+            }
+            @foreach (var category in Model.ExperienceCategoryJunctions.Select(e => e.Category))
+            {
+                <a class="btn btn-sm btn-dark" style="display:inline" href="/social/categorysummary/@category.Url">@category.Name</a>
+            }
+        </div>
+        <a href="~/img/images/destination-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+            <span class="icon-expand"></span>
+        </a>
+    </div>
+</div>

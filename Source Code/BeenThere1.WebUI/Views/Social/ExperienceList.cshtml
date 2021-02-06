@@ -1,0 +1,134 @@
+﻿@model ExperienceListModel
+
+@section Css{
+    
+    <style>
+        .mul-select {
+            width: 100%;
+        }
+    </style>
+}
+
+@section Scripts{
+   
+
+    <script>
+        $(document).ready(function () {
+            $(".mul-select").select2({
+                placeholder: " Select categories",
+                tags: true,
+                tokenSeparators: ['/', ',', ';', " "]
+            });
+        })
+    </script>
+
+    <script>
+        jQuery(document).ready(function($){
+            $('select').find('option[value=@Model.ChosenCountryCode]').attr('selected','selected');
+        });
+
+    </script>
+}
+
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/img/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
+                <h1 class="mb-3 bread">Places to Travel</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Read <i class="ion-ios-arrow-forward"></i></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pb ftco-no-pt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search-wrap-1 ftco-animate p-4">
+                    <form action="ExperienceList" method="post" id="experienceFilter">
+                        <div class="row">
+                            <div class="col-lg align-items-end">
+                                <div class="form-group">
+                                    <div class="form-field">
+                                        <input name="searchKeyword" asp-for="SearchKeyword" type="text" class="form-control" placeholder="Places, names, authors...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg align-items-end">
+                                <div class="form-group">
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select name="countryCode" id="countryCode" class="form-control">
+                                                <option selected="selected" disabled>
+                                                    Country Choice
+                                                </option>
+                                                @await Html.PartialAsync("_CountrySelectList");
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg align-items-end">
+                                <div class="form-group">
+                                    <div class="form-field">
+
+                                        <div class="form-group">
+                                            <select name="filterCategoryIds" class="mul-select" multiple="true">
+                                                @foreach (var category in Model.AllCategories)
+                                                {
+                                                    <!option name="filterCategoryIds[]" value="@category.CategoryId" @(Model.FilterCategoryIds.Any(i => i == category.CategoryId) ? "selected" : "")>@category.Name</!option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg align-self-end">
+                                <div class="form-group">
+                                    <div class="form-field">
+                                        <input type="submit" value="Search" class="form-control btn btn-primary">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section mb-5" style="padding:2em;">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        @for (int i = 0; i < Model.PageInfo.TotalPages(); i++)
+                        {
+                            <li class="page-item @(Model.PageInfo.CurrentPage== i+1? "active" : "" )">
+                                <button type="submit" form="experienceFilter" class="page-link" asp-route-page="@(i+1)">
+                                    @(i+1)
+                                </button>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            @foreach (var experience in Model.Experiences)
+            {
+
+                @await Html.PartialAsync("_ExperienceCard3", experience);
+            }
+        </div>
+
+    </div>
+</section>

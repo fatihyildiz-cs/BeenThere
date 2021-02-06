@@ -1,0 +1,41 @@
+﻿@model Comment
+
+    <div>
+        <input type="hidden" asp-for="CommentId"/>
+        <hr style="height:3px;border:none;color:#333;background-color:#333;" />
+        <div class="row ml-3">
+            <div class="col-2">
+                <div class="row" style="margin-bottom:10px">
+                    <div style="background-image: url('/img/@Model.AuthorProfilePic');" class="blog-author-image"></div>
+                </div>
+                <div class="row">
+                    <h6><a href="/social/profile2/@Model.Author">@Model.Author</a></h6>
+                    <div class="meta">@Model.DateOfCreation.ToShortDateString()</div>
+                    <div class="meta">@Model.DateOfCreation.ToShortTimeString()</div>
+                </div>
+
+            </div>
+            <div class="col-10">
+                <h4 class="card-subtitle mb-2 mt-3 text-muted">@Model.Title</h4>
+                <p>@Model.Body</p>
+                @if (User.Identity.Name == Model.Author || User.IsInRole("Admin"))
+                {
+                    <div style="float: right;">
+                        <button type="button" onclick="findCommentId(@Model.CommentId, '@Model.Title','@Model.Body')" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editCommentModal">
+                            Edit
+                        </button>
+
+                        <a type="button" href="/social/commentdelete/@Model.CommentId" class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    </div>
+                 }
+            </div>
+        </div>
+    </div>
+        
+            
+
+
+
+

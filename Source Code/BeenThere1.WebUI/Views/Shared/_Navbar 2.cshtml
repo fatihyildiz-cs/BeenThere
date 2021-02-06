@@ -1,0 +1,73 @@
+﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-danger navbar-dark border-bottom box-shadow mb-3">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index2">BeenThere1.WebUI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+            <ul class="navbar-nav ml-auto">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/account/manage">@User.Identity.Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/social/profile2/@User.Identity.Name">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/account/logout">Logout</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/account/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/account/register">Register</a>
+                    </li>
+                }
+            </ul>
+
+
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index2">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Social" asp-action="ExperienceCreate">Compose</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Social" asp-action="experiencelist2">Read</a>
+                </li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                }
+
+                @if (User.IsInRole("Admin"))
+                {
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="admin" asp-action="adminpanel" style="color:white">Admin Panel</a>
+                    </li>
+
+                }
+            </ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</nav>

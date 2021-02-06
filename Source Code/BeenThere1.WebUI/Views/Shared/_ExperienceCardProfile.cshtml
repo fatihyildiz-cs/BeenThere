@@ -1,0 +1,38 @@
+﻿@model Experience
+
+        <div class="blog-entry">
+            <div class="row">
+                <div class="col-5">
+                    <a href="/social/experiencedetails/@Model.ExperienceId" class="block-20" style="background-image: url('/img/@Model.ImageUrl');">
+                    </a>
+                    <div class="text mt-3 float-right d-block">
+                        <div class="d-flex align-items-center pt-2 mb-4 topp">
+                            <div class="one">
+                                <span class="day">@Model.DateOfCreation.Day</span>
+                            </div>
+                            <div class="two">
+                                <span class="yr">@Model.DateOfCreation.Year</span>
+                                <span class="mos">@Model.DateOfCreation.ToString("MMMM")</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <h1 class=""><a href="/social/experiencedetails/@Model.ExperienceId">@Model.Name.ToUpper()</a></h1>
+                    @if (@Model.Location != null)
+                    {
+                        <h3 class="mb-3">Location: <a class="btn btn-secondary ml-3" href="/social/locationsummary/@Model.Location.LocationId">@Model.Location.Name</a></h3>
+                    }
+                    @if (Model.ExperienceCategoryJunctions.Select(e => e.Category).Count() > 0)
+                    {
+                        <h3 class="mr-3" style="display:inline">Categories:</h3>
+                        @foreach (var category in Model.ExperienceCategoryJunctions.Select(e => e.Category))
+                        {
+                            <a class="btn btn-sm btn-dark" style="display:inline" href="/social/categorysummary/@category.Url">@category.Name</a>
+                        }
+                    }
+
+                </div>
+            </div>
+            
+        </div>

@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{7C55A194-0F16-4BBD-90B1-925574C78F29}|BeenThere1.WebUI">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BeenThere1.WebUI/Views/Shared/_Navbar.cshtml">
+    <Files>
+      <File FileName="BeenThere1.WebUI/Views/Shared/_Layout.cshtml" Line="3" Column="1" />
+      <File FileName="BeenThere1.WebUI/Views/Shared/_Navbar.cshtml" Line="31" Column="18" />
+      <File FileName="BeenThere1.WebUI/Controllers/SocialController.cs" Line="50" Column="30" />
+      <File FileName="BeenThere1.Entity/Experience.cs" />
+      <File FileName="BeenThere1.Data/Concrete/BTContext.cs" />
+      <File FileName="BeenThere1.WebUI/Views/Social/Profile.cshtml" Line="26" Column="50" />
+      <File FileName="BeenThere1.WebUI/Views/Shared/_ExperienceCard.cshtml" Line="10" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BeenThere1" expanded="True">
+            <Node name="BeenThere1.Data" expanded="True">
+              <Node name="Concrete" expanded="True" />
+            </Node>
+            <Node name="BeenThere1.WebUI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Navbar.cshtml" selected="True" />
+                </Node>
+                <Node name="Social" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BeenThere1.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{7C55A194-0F16-4BBD-90B1-925574C78F29}|BeenThere1.WebUI">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BeenThere1.WebUI/Startup.cs">
+    <Files>
+      <File FileName="BeenThere1.WebUI/Startup.cs" Line="79" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BeenThere1_SLN" expanded="True">
+            <Node name="BeenThere1.Business" expanded="True">
+              <Node name="Abstract" expanded="True" />
+            </Node>
+            <Node name="BeenThere1.Entity" expanded="True" />
+            <Node name="BeenThere1.WebUI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Identity" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Admin" expanded="True" />
+                <Node name="Social" expanded="True" />
+              </Node>
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BeenThere1.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

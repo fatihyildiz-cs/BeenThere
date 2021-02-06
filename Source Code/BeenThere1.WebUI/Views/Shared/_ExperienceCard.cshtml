@@ -1,0 +1,43 @@
+﻿@model Experience
+
+
+<div class="col-lg-4 d-flex align-items-stretch">
+    <div class="card mb-4 shadow-sm">
+        <img class="card-img-top" src="~/img/@Model.ImageUrl" alt="" />
+        <div class="card-body">
+            <h4 class="card-text">@Model.Name</h4>
+            <p class="card-text">@Model.Author</p>
+
+            <div class="card-text mb-3">
+
+                @if (@Model.Location!=null)
+                {
+                <a class="btn btn-sm btn-secondary" href="/social/locationsummary/@Model.Location.LocationId">@Model.Location.Name</a> 
+                }
+
+            </div>
+
+            <div class="card-text mb-3">
+
+                @foreach (var category in Model.ExperienceCategoryJunctions.Select(e => e.Category))
+                {
+                    <a class="btn btn-sm btn-light" style="display:inline" href="/social/categorysummary/@category.Url">@category.Name</a>
+                }
+
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+
+                    <a asp-controller="social" asp-action="experiencedetails" asp-route-id="@Model.ExperienceId" class="btn btn-sm btn-info">View</a>
+                    @if (@User.Identity.Name == Model.Author || User.IsInRole("Admin"))
+                    {
+                        <a href="/social/experienceedit/@Model.ExperienceId" class="btn btn-sm btn-warning">Edit</a>
+                    }
+
+                </div>
+                <small class="text-muted">9 mins</small>
+            </div>
+        </div>
+    </div>
+</div>

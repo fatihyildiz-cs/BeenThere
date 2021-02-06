@@ -1,0 +1,102 @@
+﻿@model CategoryListModel
+@{
+    Layout = "_Layout_admin";
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+        $(document).ready(function () {
+            $('#pendingCategories').DataTable();
+        });
+
+    </script>
+}
+
+<h3>Approved Categories:</h3>
+
+<table id="myTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Url</td>
+            <td style="width: 50px;">Approved</td>
+            <td style="width: 330px;"></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Categories.Where(i=>i.Approved==true).Count() > 0)
+        {
+            @foreach (var category in Model.Categories.Where(c => c.Approved == true))
+            {
+
+                    <tr>
+                        <td>@category.CategoryId</td>
+                        <td>@category.Name</td>
+                        <td>@category.Url</td>
+                        <td>
+                            <input type="checkbox" asp-for="@category.Approved" onclick="return false;">
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="/admin/categorydetails/@category.CategoryId">View Locations</a>
+                            <a class="btn btn-sm btn-success" href="/admin/categoryedit/@category.CategoryId">Edit</a>
+                            <a class="btn btn-sm btn-danger" href="/admin/categorydelete/@category.CategoryId">Delete</a>
+                            <a class="btn btn-sm btn-danger" href="/admin/categorydisapprove/@category.CategoryId">Disapprove</a>
+                        </td>
+                    </tr>
+                @*}*@
+
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                <h3>No Categories</h3>
+            </div>
+        }
+
+    </tbody>
+</table>
+<hr />
+<h3 class="mb-3">Pending Category Requests:</h3>
+<table id="pendingCategories" class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Url</td>
+            <td style="width: 250px;"></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Categories.Where(i => i.Approved == false).Count() > 0)
+        {
+            @foreach (var category in Model.Categories.Where(c=>c.Approved == false))
+            {
+                    <tr>
+                        <form asp-controller="admin" asp-action="categoryapprove" method="post">
+                            <td><input name="categoryId" asp-for="@category.CategoryId" readonly> </td>
+                            <td><input name="categoryName" asp-for="@category.Name"> </td>
+                            <td><input name="categoryUrl" asp-for="@category.Url"> </td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" type="submit">Approve Category</button>
+                                <a class="btn btn-sm btn-danger" href="/admin/categorydelete/@category.CategoryId">Delete Request</a>
+                            </td>
+                        </form>
+                    </tr>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                <h3>No Pending Categories</h3>
+            </div>
+        }
+
+    </tbody>
+</table>
+
+<a class="btn btn-sm btn-primary" href="/admin/categorycreate">Create New Category</a>

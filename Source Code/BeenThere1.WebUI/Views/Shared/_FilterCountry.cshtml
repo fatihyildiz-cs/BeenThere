@@ -1,0 +1,28 @@
+﻿@model MapModel
+
+<div class="pac-card" id="filter">
+    <form method="post" id="friendform">
+
+        <label for="countryChoice">Choose a country:</label>
+
+        <select id="countryChoice" name="countryChoice">
+
+            <option value="@Model.ChosenCountryName" selected>@Model.ChosenCountryName</option>
+
+            @foreach (var countryName in Model.Countries)
+            {
+                <option value="@countryName">@countryName</option>
+            }
+
+        </select>
+
+        @foreach (var category in Model.AllCategories)
+        {
+            <div class="custom-control custom-checkbox btn btn-light mr-3" style="display: inline;">
+                <input type="checkbox" class="custom-control-input" name="filterCategoryIds" value="@category.CategoryId" id="category_@(category.CategoryId)" @(Model.ChosenCategoryArray.Any(i => i == category.CategoryId) ? "checked" : "")>
+                <label class="custom-control-label" for="category_@(category.CategoryId)">@category.Name</label>
+            </div>
+        }
+        <button id="btnsubmit" type="submit" class="btn btn-warning btn-sm">Filter</button>
+    </form>
+</div>

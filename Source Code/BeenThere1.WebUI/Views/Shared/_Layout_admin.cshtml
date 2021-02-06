@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BeenThere1.WebUI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/css/adminpanel.css" />
+    @RenderSection("Css", required: false)
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+
+        <div class="sidenav">
+            <a>BeenThere</a>
+            <a href="/admin/userlist">User List</a>
+            <a href="/admin/locationlist">Location List</a>
+            <a href="/admin/rolelist">Role List</a>
+            <a href="/admin/categorylist">Category List</a>
+        </div>
+        @await Html.PartialAsync("_Navbar")
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @if (TempData["message"] != null)
+            {
+                <partial name="_ResultMessage" model="@(TempData.Get<AlertMessage>("message"))" />
+            }
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - BeenThere1.WebUI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://use.fontawesome.com/fa7d7d74ce.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE1Y1CP375rP8PlxlKBoumKtsGkzk1KWE&callback=initMap"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

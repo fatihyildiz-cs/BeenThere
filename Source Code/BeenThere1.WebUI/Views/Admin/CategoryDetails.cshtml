@@ -1,0 +1,85 @@
+﻿@model CategoryModel
+@{
+    Layout = "_Layout_admin";
+}
+@section Scripts{
+    <script>$(document).ready(function () {
+            $('#myTable').DataTable();
+    });</script>
+}
+
+<h1>List of Locations Registered to @Model.Name</h1>
+
+<table id="myTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Location Id</td>
+            <td>Location Name</td>
+            <td style="width: 250px;"></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Locations.Count() > 0)
+        {
+            @foreach (var location in Model.Locations)
+            {
+                <tr>
+                    <td>@location.LocationId</td>
+                    <td>@location.Name</td>
+                    <td>
+                        <a class="btn btn-sm btn-success" href="/admin/locationedit/@location.LocationId">Edit</a>
+
+                        <form method="post" action="/admin/deletelocationfromcategory" style="display: inline">
+                            <input type="hidden" name="categoryId" value="@Model.Id" />
+                            <input type="hidden" name="locationId" value="@location.LocationId" />
+                            <button type="submit" class="btn btn-sm btn-danger" href="">Delete From This Category</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                <h3>No Locations To Show For This Categorie</h3>
+            </div>
+        }
+
+    </tbody>
+
+
+
+    @*<table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Location Id</th>
+                    <th scope="col">Location Name</th>
+                    <th scope="col">Location Type</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var location in Model.Locations)
+                {
+                    <tr>
+                        <td>@location.LocationId</td>
+                        <th scope="row">@location.Name</th>
+                        <th scope="row">@location.Type</th>
+                        <td>
+                            <a class="btn btn-sm btn-success" href="/admin/locationedit/@location.LocationId">Edit</a>
+
+                            <form method="post" action="/admin/deletelocationfromcategory" style="display: inline">
+                                <input type="hidden" name="categoryId" value="@Model.Id"/>
+                                <input type="hidden" name="locationId" value="@location.LocationId"/>
+                                <button type="submit" class="btn btn-sm btn-danger" href="">Delete From This Category</button>
+                            </form>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <a class="btn btn-sm btn-primary" href="/admin/categorylist">Go Back To Category List</a>*@
+
+    @*<a class="btn btn-sm btn-primary" href="/admin/categorycreate">Create New Category</a>*@

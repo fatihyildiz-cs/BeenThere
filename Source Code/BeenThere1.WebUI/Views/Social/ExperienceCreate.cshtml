@@ -1,0 +1,166 @@
+﻿@model ExperienceCreateUpdateModel
+
+@section Css{
+    <link rel="stylesheet" href="~/css/categorychoose.css" />
+    <link rel="stylesheet" href="~/css/autoCompleteForm.css" />
+    <style>
+        .mul-select {
+            width: 50%;
+        }
+
+        body {
+            background-color: #d6e0f0;
+        }
+    </style>
+}
+
+@section Scripts{
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE1Y1CP375rP8PlxlKBoumKtsGkzk1KWE&callback=initAutocomplete&libraries=places"
+            defer></script>
+    <script src="~/js/autoCompleteForm.js"></script>
+
+    <script>function requestCategory(e) {
+
+            var request = $("#categoryRequestInput").val();
+
+            if (request != "") {
+                $.ajax({
+                    url: "/admin/categoryrequest",
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: { requestedCategoryName: request },
+                    success: function (result) {
+
+                        swal("Category request has been recieved. Thank you!");
+                        $('#categoryRequestInput').val('');
+                    }
+                })
+
+            }
+
+        };</script>
+    <script>$(document).ready(function () {
+            $(".mul-select").select2({
+                placeholder: " Select categories",
+                tags: true,
+                tokenSeparators: ['/', ',', ';', " "]
+            });
+        })</script>
+
+    <script src="https://cdn.tiny.cloud/1/etjml9n4xo2n4ixmu35javdmusxfwbfwqnkssn9tlw7yoo5s/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+            tinymce.init({
+        selector: '#body_input'
+
+            });
+    </script>
+
+
+}
+
+<section class="ftco-section ">
+    <div class="container pl-5 pr-5 pb-5 mb-5 pt-3" style="border:1px solid #cecece; border-radius: 25px; border-width: thick; border-color:#222831; background-color:white">
+        @*<div class="form-group">
+                <div id="locationField">
+                    <input id="autocomplete"
+                           placeholder="Enter your address"
+                           onFocus="geolocate()"
+                           type="text" />
+                </div>
+            </div>*@
+
+        @await Html.PartialAsync("_AutocompleteFormAreas")
+
+        <form asp-controller="Social" asp-action="experiencecreate" method="post" enctype="multipart/form-data">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <input type="hidden" class="form-control" asp-for="LocationOfExperience.LocationId" readonly>
+
+            <input type="hidden" class="form-control" name="Author" value="@User.Identity.Name" readonly>
+
+            <input type="hidden" class="form-control" asp-for="AllCategories" readonly>
+
+            <div class="form-group">
+
+                <h1>You can share your experiences here.</h1>
+                <hr / class="mb-3">
+
+                @if (Model.LocationOfExperience.LocationId == 0)
+                {
+                    <h1>Please select a location <a href="/home/index/#map">here</a>.</h1>
+                }
+
+            </div>
+            @if (Model.LocationOfExperience.LocationId > 0)
+            {
+                <div class="form-group form-inline">
+                    <label class="mr-3" asp-for="LocationOfExperience.Name"><h3>You are writing about:</h3> </label>
+                    <input id="locationName" class="form-control" asp-for="LocationOfExperience.Name" style="width:50%" readonly>
+                </div>
+                <h3 class="mb-3">Interesting choice! Please provide details below.</h3>
+
+
+                <div class="form-group">
+                    <label asp-for="Name">Title</label>
+                    <input class="form-control" asp-for="Name" placeholder="How would you best describe your experience in a few words?">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                <label asp-for="Title"></label>
+                <input id="title_input" class="form-control" asp-for="Title">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>*@
+
+                <div class="form-group">
+                    <label asp-for="Body"></label>
+                    <textarea id="body_input" class="form-control" asp-for="Body" rows="8" placeholder=""></textarea>
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Choose Cover Photo (Tip: Horizontal pictures would look better!)</label>
+                    <input type="file" name="file" style="display:inline" />
+                </div>
+
+                <h5>Categories For This Experience</h5>
+
+                @*@foreach (var category in Model.AllCategories.Where(c => c.Approved == true))
+            {
+                <div class="custom-control custom-checkbox p-3" style="display:inline">
+                    <input type="checkbox" class="custom-control-input" name="selectedCategoryIds" value="@category.CategoryId" id="category_@(category.CategoryId)">
+                    <label class="custom-control-label" for="category_@(category.CategoryId)">@category.Name</label>
+                </div>
+
+            }*@
+
+                <select name="selectedCategoryIds" class="mul-select" multiple="true">
+                    @foreach (var category in Model.AllCategories.Where(c => c.Approved == true))
+                    {
+                        <!option value="@category.CategoryId">
+                            @category.Name
+                        </!option>
+                    }
+                </select>
+
+                <button type="submit" class="btn btn-primary btn-lg mt-5" style="display:block">Save Experience</button>
+            }
+        </form>
+
+        @if (Model.LocationOfExperience.LocationId > 0)
+        {
+            <div class="p-3 mt-5" style="border:1px solid #cecece; border-radius: 25px; border-width: thin; border-color:#222831; background-color:white; display:inline-block ">
+                <h5 class="">Cannot find the category you are looking for? Submit a category request.</h5>
+
+                <div class="form-group" style="width:30%">
+                    <input id="categoryRequestInput" class="form-control mt-3" name="categoryRequestName" placeholder="Category Name" required>
+                    <span validation-for="categoryRequestName" class="text-danger"></span>
+                </div>
+                <button onclick="requestCategory()" class="btn btn-primary" type="submit">Submit Request</button>
+            </div>
+        }
+    </div>
+</section>

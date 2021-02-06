@@ -1,0 +1,17 @@
+﻿@model RoleCreateModel
+
+@{
+    Layout = "_Layout_admin";
+}
+<form asp-controller="admin" asp-action="rolecreate">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group mt-5">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save New Role</button>
+    <hr />
+    <a asp-controller="admin" asp-action="rolelist" class="btn btn-primary mt-5">View All Roles</a>
+</form>

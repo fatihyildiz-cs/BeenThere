@@ -1,0 +1,135 @@
+﻿@model ExperienceCreateUpdateModel
+
+@section Css{
+    <link rel="stylesheet" href="~/css/categorychoose.css" />
+}
+
+@section Scripts{
+    <script>$(document).ready(function () {
+            $('#myTable').DataTable();
+        });</script>
+
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <script>CKEDITOR.replace('body_input');</script>
+}
+
+<form asp-controller="social" asp-action="experienceedit" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="ExperienceId" value="@Model.ExperienceId" />
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                Choose from existing locations
+
+                <table id="myTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Country</td>
+                            <td>City</td>
+                            <td style="width: 150px;"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.AllLocations.Count() > 0)
+                        {
+                            @foreach (var location in Model.AllLocations)
+                            {
+                                <tr>
+                                    <td>@location.Name</td>
+                                    <td>@location.Country</td>
+                                    <td>@location.City</td>
+
+                                    <td>
+                                        <label class="LocationChooseContainer">
+                                            <input type="radio" name="LocationChoiceId" value="@location.LocationId" @(location.LocationId == Model.LocationID ? "checked" : "")>
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">
+                                <h3>No Roles</h3>
+                            </div>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col">
+                <a class="btn btn-sm btn-success" href="/social/locationcreate/">Create New Location</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="hidden" class="form-control" asp-for="Author" value="@User.Identity.Name">
+    </div>
+    <div class="form-group">
+        <label asp-for="Body"></label>
+        <textarea id="body_input" class="form-control" asp-for="Body" rows="3"></textarea>
+        <span asp-validation-for="Body" class="text-danger"></span>
+    </div>
+    @*<div class="form-group">
+            <label asp-for="ImageUrl"></label>
+            <input class="form-control" asp-for="ImageUrl">
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>*@
+
+    <div class="form-group">
+        <label asp-for="ImageUrl">Experience Thumbnail</label>
+        <input type="hidden" asp-for="ImageUrl">
+        <img src="~/img/@Model.ImageUrl" width="80" />
+        <input type="file" name="file" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+
+
+    <h5>Categories For This Experience</h5>
+
+    @foreach (var category in Model.AllCategories)
+    {
+        <div class="custom-control custom-checkbox p-3" style="display:inline">
+            <input type="checkbox" class="custom-control-input" name="selectedCategoryIds" value="@category.CategoryId" id="category_@(category.CategoryId)"
+                   @(Model.CategoriesOfThisListing.Any(i => i.CategoryId == category.CategoryId) ? "checked" : "")>
+            <label class="custom-control-label" for="category_@(category.CategoryId)">@category.Name</label>
+        </div>
+    }
+
+    <button type="submit" class="btn btn-primary mt-5" style="display:block">Save Experience</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+@*<div id="trip_type_table" class="p13n_tag_cloud war_smaller_buttons">
+        <div class="c-cell jfy_cloud tag content category-Couple" data-category="Couple" data-content="cruise_couple" onclick="ta.call('ta.userreview.handleTripType', event, this)">Çift</div>
+        <div class="c-cell jfy_cloud tag content category-Friends" data-category="Friends" data-content="cruise_friends" onclick="ta.call('ta.userreview.handleTripType', event, this)">Arkadaşlar</div>
+        <div class="c-cell jfy_cloud tag content category-Solo" data-category="Solo" data-content="cruise_solo" onclick="ta.call('ta.userreview.handleTripType', event, this)">Yalnız</div>
+        <div class="c-cell jfy_cloud tag content category-Business" data-category="Business" data-content="airm_businesstrip" onclick="ta.call('ta.userreview.handleTripType', event, this)">İş</div>
+        <div class="c-cell jfy_cloud tag content category-Family_yk" data-category="Family_yk" data-content="cruise_family_young_kids" onclick="ta.call('ta.userreview.handleTripType', event, this)">Aile (küçük çocuklar)</div>
+        <div class="c-cell jfy_cloud tag content category-Family_ok" data-category="Family_ok" data-content="cruise_family_older_kids" onclick="ta.call('ta.userreview.handleTripType', event, this)">Aile (büyük çocuklar)</div>
+        <div class="c-cell jfy_cloud tag content category-Family_mg" data-category="Family_mg" data-content="cruise_family_multi_generation" onclick="ta.call('ta.userreview.handleTripType', event, this)">Aile (ikiden fazla kuşak)</div>
+    </div>*@

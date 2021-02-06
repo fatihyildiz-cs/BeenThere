@@ -1,0 +1,294 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.WebUI/BeenThere1.WebUI.csproj": {}
+  },
+  "projects": {
+    "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Business/BeenThere1.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Business/BeenThere1.Business.csproj",
+        "projectName": "BeenThere1.Business",
+        "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Business/BeenThere1.Business.csproj",
+        "packagesPath": "/Users/fatihyildiz/.nuget/packages/",
+        "outputPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Business/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fatihyildiz/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj": {
+                "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj"
+              },
+              "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj": {
+                "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj",
+        "projectName": "BeenThere1.Data",
+        "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj",
+        "packagesPath": "/Users/fatihyildiz/.nuget/packages/",
+        "outputPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fatihyildiz/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj": {
+                "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj",
+        "projectName": "BeenThere1.Entity",
+        "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj",
+        "packagesPath": "/Users/fatihyildiz/.nuget/packages/",
+        "outputPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fatihyildiz/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.WebUI/BeenThere1.WebUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.WebUI/BeenThere1.WebUI.csproj",
+        "projectName": "BeenThere1.WebUI",
+        "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.WebUI/BeenThere1.WebUI.csproj",
+        "packagesPath": "/Users/fatihyildiz/.nuget/packages/",
+        "outputPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.WebUI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fatihyildiz/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Business/BeenThere1.Business.csproj": {
+                "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Business/BeenThere1.Business.csproj"
+              },
+              "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj": {
+                "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/BeenThere1.Data.csproj"
+              },
+              "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj": {
+                "projectPath": "/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Entity/BeenThere1.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Bia.Countries": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Globalization": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

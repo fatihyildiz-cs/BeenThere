@@ -1,0 +1,50 @@
+﻿@model UserModel
+@{
+    Layout = "_Layout_admin";
+}
+
+
+@*method=post burada default mu?*@
+
+<form asp-controller="admin" asp-action="useredit" method="post">
+    <input type="hidden" name="UserId" value="@Model.UserID"></input>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <hr />
+
+    <h5>Roles For This User</h5>
+    @foreach (var role in Model.AllRoleNames)
+    {
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="assignedRoleNames" value="@role" id="role_@(role)" @(Model.RoleNamesOfThisUser.Any(c => c == role) ? "checked" : "")>
+            <label class="custom-control-label" for="role_@(role)">@role</label>
+        </div>
+    }
+
+
+    <hr />
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+<hr />
+
+<a class="btn btn-sm btn-primary" href="/admin/userlist">Go Back To User List</a>

@@ -1,0 +1,210 @@
+﻿@model ProfileModel
+
+@section Css{
+    <link rel="stylesheet" href="~/css/currentlyTravelingSwitch.css" />
+}
+
+@section Scripts{
+    <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var countries = @Html.Raw(ViewBag.MapDisplay);
+    </script>
+    <script src="~/js/visitedCountriesMap.js" asp-append-version="true"></script>
+
+}
+
+<link rel="stylesheet" href="~/css/profile.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+<section class="ftco-section pt-0">
+    <div class="main-content" style="">
+
+        <div id="mapdiv" style="width: 100%; height: 450px; margin-bottom:7%"></div>
+        <div class="container-fluid mt--7">
+            <div class="row">
+                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                    <div class="card card-profile shadow">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="card-profile-image">
+                                    <a href="#">
+
+                                    </a>
+                                    <a href="~/img/@Model.ProfilePicUrl" class="image-popup" style="position: absolute; top: 50px; right:50px">
+                                        <span><img src="~/img/@Model.ProfilePicUrl" alt="Profile Picture" style="width:150px; height:175px" class="rounded-circle"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                            <div class="d-flex justify-content-between">
+                                @if (User.Identity.Name == Model.UserName)
+                                {
+
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editBioModal">
+                                        Edit Bio
+                                    </button>
+                                    @*<a href="#" class="btn btn-sm btn-default float-right">Message</a>*@
+
+                                }
+                            </div>
+                        </div>
+
+                        <div class="card-body pt-0 pt-md-4">
+                            <div class="row mt-3">
+                                <div class="col mt-5">
+                                    <div class="card-profile-stats d-flex justify-content-center md-5">
+                                        <div>
+                                            <span class="heading">@Model.VisitedCountries.Count()</span>
+                                            <span class="description">Visited Countries</span>
+                                        </div>
+                                        <div>
+                                            <span class="heading">@Model.Experiences.Count()</span>
+                                            <span class="description">Experiences</span>
+                                        </div>
+                                        @*<div>
+                                                <span class="heading">89</span>
+                                                <span class="description">Comments</span>
+                                            </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h2>
+                                    @Model.FirstName @Model.LastName
+                                </h2>
+                                <h3>
+                                    Hometown: @Model.Hometown, @Model.HomeCountry
+                                </h3>
+                                <h4>
+                                    Email: @Model.Email
+                                </h4>
+                                <h4>
+                                    Instagram Id: @Model.InstagramId
+                                </h4>
+                                <h4>
+                                    Youtube Id: @Model.YoutubeId
+                                </h4>
+                                <div>
+                                    <label asp-for="CurrentlyTraveling">Currently Traveling</label>
+                                    <input type="checkbox" asp-for="CurrentlyTraveling" onclick="return false;" />
+                                </div>
+                                @if (!string.IsNullOrWhiteSpace(Model.CurrentCountry))
+                                {
+                                    <div>
+                                        <i class="ni education_hat mr-2"></i>Current Country: @Model.CurrentCountry
+                                    </div>
+                                }
+
+                                <hr class="my-4">
+                                <p>@Model.Bio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 order-xl-1">
+                    <div class="card bg-secondary shadow">
+                        <div class="card-header bg-white border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <h3 class="mb-0">Latest Experiences</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    @*<a href="#!" class="btn btn-sm btn-primary">Edit Profile</a>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @foreach (var experience in Model.Experiences)
+                            {
+                                @await Html.PartialAsync("_ExperienceCardProfile", experience);
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="editBioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Bio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="bioEditForm" asp-controller="social" asp-action="profileedit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="UserId" />
+                    <div class="form-group">
+                        <label asp-for="ProfilePicUrl">Profile Photo</label>
+                        <input type="hidden" asp-for="ProfilePicUrl">
+                        <img src="~/img/@Model.ProfilePicUrl" width="80" />
+                        <input type="file" name="file" />
+                        <span asp-validation-for="ProfilePicUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-8">
+                            <label asp-for="Bio"></label>
+                            <textarea asp-for="Bio" class="form-control" rows="2"></textarea>
+                        </div>
+                        <div class="col-4">
+                            <div class="col">
+                                <label asp-for="DateOfBirth">Birthdate</label>
+                                <input class="form-control" asp-for="DateOfBirth">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-3">
+                        <div class="col">
+                            <label asp-for="PersonalWebsite"></label>
+                            <input asp-for="PersonalWebsite" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label asp-for="InstagramId"></label>
+                            <input asp-for="InstagramId" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label asp-for="YoutubeId"></label>
+                            <input asp-for="YoutubeId" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row mt-3">
+                        <div class="col">
+                            <label asp-for="Hometown"></label>
+                            <input asp-for="Hometown" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label asp-for="HomeCountry"></label>
+                            <input asp-for="HomeCountry" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row mt-3">
+                        <div class="col">
+                            <label asp-for="CurrentlyTraveling">Currently Traveling</label>
+                            <label class="switch">
+                                <input name="currentlyTraveling" asp-for="CurrentlyTraveling" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label asp-for="CurrentCountry"></label>
+                            <input asp-for="CurrentCountry" class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button form="bioEditForm" type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

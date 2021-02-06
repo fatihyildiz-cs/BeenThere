@@ -1,0 +1,72 @@
+﻿@model RoleEditGetRequestModel
+@{
+    Layout = "_Layout_admin";
+}
+<h1 class="h3">Edit Role</h1>
+<form asp-controller="Admin" asp-action="RoleEdit">
+    <hr />
+    <div class="form-group mt-3">
+        <label for="RoleName">Role Name:</label>
+        <input type="text" name="RoleName" value="@Model.Role.Name" class="form-control" />
+    </div>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+
+            <input type="hidden" name="RoleId" value="@Model.Role.Id" />
+
+            <h6 class="bg-info text-white p-1">Add to @Model.Role.Name</h6>
+            <table class="table table-bordered table-sm">
+                @if (@Model.RoleNonMembers.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="2">All users belong to this role.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var user in Model.RoleNonMembers)
+                    {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td style="width:350px">
+                                <input type="checkbox" name="IdsThatWillBeAdded" value="@user.Id" />
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </table>
+
+            <hr />
+
+            <h6 class="bg-info text-white p-1">Remove from @Model.Role.Name</h6>
+            <table class="table table-bordered table-sm">
+                @if (@Model.RoleMembers.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="2">No users belong to this role.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var user in Model.RoleMembers)
+                    {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td style="width:350px">
+                                <input type="checkbox" name="IdsThatWillBeDeleted" value="@user.Id" />
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </table>
+
+            <button type="submit" class="btn btn-success mt-3">Save Changes</button>
+            <hr />
+            <a href="/admin/rolelist" class="btn btn-primary mt-5">Go Back To Rolelist</a>
+</form>
+        </div>
+    </div>

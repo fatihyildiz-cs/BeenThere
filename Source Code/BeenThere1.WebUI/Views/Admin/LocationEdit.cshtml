@@ -1,0 +1,105 @@
+﻿@model LocationModel
+@{
+    Layout = "_Layout_admin";
+}
+@section Scripts{
+    <script>$(document).ready(function () {
+            $('#myTable').DataTable();
+        });</script>
+}
+
+<form asp-controller="admin" asp-action="locationedit">
+    <input type="hidden" asp-for="Id"></input>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="State"></label>
+        <input asp-for="State" class="form-control" />
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country"></label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Latitude"></label>
+        <input asp-for="Latitude" class="form-control" />
+        <span asp-validation-for="Latitude" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Longitude"></label>
+        <input asp-for="Longitude" class="form-control" />
+        <span asp-validation-for="Longitude" class="text-danger"></span>
+    </div>
+
+    <hr />
+
+    <h5>Experiences For This Location</h5>
+
+    <table id="myTable" class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Experience Id</td>
+                <td>Experience Author</td>
+                <td>Posted Date</td>
+                <td style="width: 150px;"></td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.ExperiencesOfThisLocation.Count() > 0)
+            {
+                @foreach (var experience in Model.ExperiencesOfThisLocation)
+                {
+                    <tr>
+                        <td>@experience.ExperienceId</td>
+                        <td>@experience.Author</td>
+                        <td>@experience.DateOfCreation</td>
+                        <td>
+                            <a href="" class="btn btn-primary btn-sm mr-2">Edit</a>
+
+                            <a class="btn btn-sm btn-danger" href="">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    <h3>No Experiences To Show For This Location</h3>
+                </div>
+            }
+
+        </tbody>
+    </table>
+
+
+
+
+    <h5>Categories For This Location</h5>
+    @foreach (var category in Model.AllCategories)
+    {
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="selectedCategoryIds" value="@category.CategoryId" id="category_@(category.CategoryId)" @(Model.CategoriesOfThisLocation.Any(i => i.CategoryId == category.CategoryId) ? "checked" : "")>
+            <label class="custom-control-label" for="category_@(category.CategoryId)">@category.Name</label>
+        </div>
+    }
+
+
+    <hr />
+
+
+    <button type="submit" class="btn btn-success mt-3">Save Changes</button>
+</form>
+<hr />
+
+<a class="btn btn-sm btn-primary" href="/admin/locationlist">Go Back To Location List</a>

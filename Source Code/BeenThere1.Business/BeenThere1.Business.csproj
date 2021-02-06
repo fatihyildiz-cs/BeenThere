@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeenThere1.Entity\BeenThere1.Entity.csproj" />
+    <ProjectReference Include="..\BeenThere1.Data\BeenThere1.Data.csproj" />
+  </ItemGroup>
+</Project>

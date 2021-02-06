@@ -1,0 +1,90 @@
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.deps.json
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.json
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.dev.json
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.dll
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.pdb
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csprojAssemblyReference.cache
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfoInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfo.cs
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CoreCompileInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CopyComplete
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1_SLN/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.genruntimeconfig.cache
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.deps.json
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.json
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.dev.json
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.dll
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.pdb
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csprojAssemblyReference.cache
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfoInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfo.cs
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CoreCompileInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CopyComplete
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.genruntimeconfig.cache
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.deps.json
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.json
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.dev.json
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.dll
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.pdb
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csprojAssemblyReference.cache
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfoInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfo.cs
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CoreCompileInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CopyComplete
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1 2/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.genruntimeconfig.cache
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.deps.json
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.json
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.dev.json
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.dll
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.pdb
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csprojAssemblyReference.cache
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfoInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfo.cs
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CoreCompileInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CopyComplete
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1 NOW/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.genruntimeconfig.cache
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.deps.json
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.json
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.dev.json
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.dll
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.pdb
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csprojAssemblyReference.cache
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfoInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfo.cs
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CoreCompileInputs.cache
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CopyComplete
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Projects/BeenThere1 test biticek/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.genruntimeconfig.cache
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.deps.json
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.json
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.runtimeconfig.dev.json
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.dll
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/bin/Debug/netcoreapp3.1/BeenThere1.Entity.pdb
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csprojAssemblyReference.cache
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfoInputs.cache
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.AssemblyInfo.cs
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CoreCompileInputs.cache
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.csproj.CopyComplete
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.dll
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.pdb
+/Users/fatihyildiz/Desktop/final/BeenThere Fatih Yildiz Summer Internship 2020/BeenThere Solution/BeenThere1.Data/obj/Debug/netcoreapp3.1/BeenThere1.Data.genruntimeconfig.cache

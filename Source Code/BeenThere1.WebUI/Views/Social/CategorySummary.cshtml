@@ -1,0 +1,29 @@
+﻿@model CategorySummaryModel
+
+<h1>Category Summary for @Model.Category.Name</h1>
+
+<div class="album py-5 bg-light">
+
+    <div class="container">
+
+        <div class="row">
+            <h6 class="mt-3">
+
+                Locations Tagged In This Category:
+                @foreach (var location in Model.Locations)
+                {
+                    <a class="btn btn-sm btn-light" style="display:inline" href="/social/locationsummary/@location.LocationId">@location.Name</a>
+                }
+            </h6>
+        </div>
+        <hr />
+        <h3>Experiences Tagged In This Category:</h3>
+        <div class="row">
+            @foreach (var experience in Model.Experiences)
+            {
+                @*<a class="btn btn-sm btn-light" style="display:inline" href="/social/experiencedetails/@experience.ExperienceId">@experience.Name</a>*@
+                @await Html.PartialAsync("_ExperienceCard", experience);
+            }
+        </div>
+    </div>
+</div>
